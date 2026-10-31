@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#14211B; --green:#1F6B44; --gold:#E8B63A; --bg:#F6F4EE; --muted:#3D4A43; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter, system-ui, sans-serif; }
+  .display { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; letter-spacing:-1px; }
+  header { max-width:1120px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; padding:20px 16px; }
+  .logo { font-size:26px; color:var(--ink); text-decoration:none; }
+  .logo span { color:var(--green); }
+  nav { display:flex; flex-wrap:wrap; align-items:center; gap:16px; }
+  nav a.link { color:var(--ink); font-weight:600; text-decoration:none; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:44px; padding:0 20px; border-radius:999px; text-decoration:none; font-weight:600; }
+  .btn-dark { background:var(--ink); color:#fff; }
+  .btn-green { background:var(--green); color:#fff; min-height:52px; border-radius:14px; font-size:17px; }
+  article { max-width:760px; margin:0 auto; padding:24px 16px 48px; }
+  .meta { color:#5A6660; font-size:14px; margin:0 0 12px; }
+  h1 { font-size:clamp(32px, 6vw, 48px); line-height:1.08; margin:0 0 24px; }
+  .cover { width:100%; border-radius:18px; margin:0 0 28px; }
+  .content { font-size:18px; line-height:1.75; }
+  .content h2 { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; font-size:30px; line-height:1.15; margin:40px 0 12px; }
+  .content h3 { font-size:22px; margin:32px 0 8px; }
+  .content a { color:var(--green); }
+  .content img { max-width:100%; border-radius:14px; }
+  .content blockquote { margin:24px 0; padding:16px 20px; border-radius:14px; background:#E3EFE7; }
+  .content table { width:100%; border-collapse:collapse; display:block; overflow-x:auto; }
+  .content th, .content td { border:1px solid #DDE3DF; padding:10px; text-align:left; }
+  .cta { margin:48px 0 0; padding:28px; border-radius:20px; background:var(--ink); color:#fff; }
+  .cta h2 { margin:0 0 8px; font-size:28px; }
+  .cta p { margin:0 0 20px; color:#D3DCD7; line-height:1.6; }
+  footer { max-width:1120px; margin:0 auto; padding:32px 16px 48px; font-size:13px; line-height:1.6; color:#5A6660; }
+  .wa-float { position:fixed; right:16px; bottom:16px; width:60px; height:60px; border-radius:50%; background:#25D366; color:#fff; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 20px rgba(0,0,0,.25); }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo display" href="/">Kado<span>Pay</span></a>
+  <nav>
+    <a class="link" href="/blog/">Blog</a>
+    <a class="btn btn-dark" href="https://wa.me/22897139608?text=Bonjour%2C%20je%20souhaite%20acheter%20une%20carte%20cadeau.">Nous écrire</a>
+  </nav>
+</header>
+
+<article>
+  <p class="meta">Publié le {{ page.date | date: "%d/%m/%Y" }}</p>
+  <h1 class="display">{{ page.title }}</h1>
+  {% if page.image %}<img class="cover" src="{{ page.image }}" alt="{{ page.title }}">{% endif %}
+  <div class="content">
+    {{ content }}
+  </div>
+
+  <div class="cta">
+    <h2 class="display">Besoin d'une carte cadeau ?</h2>
+    <p>Paie en Orange Money, Wave, Moov Money, T-Money ou Airtel Money et reçois ton code sur WhatsApp. Disponible au Sénégal, Togo, Niger, Mali et Burkina Faso.</p>
+    <a class="btn btn-green" href="https://wa.me/22897139608?text=Bonjour%2C%20je%20viens%20de%20lire%20votre%20article%20et%20je%20souhaite%20acheter%20une%20carte%20cadeau.">Commander sur WhatsApp</a>
+  </div>
+</article>
+
+<footer>
+  <p>© KadoPay · Sénégal, Togo, Niger, Mali, Burkina Faso · WhatsApp : +228 97 13 96 08</p>
+  <p>KadoPay est un revendeur indépendant de cartes cadeaux. Nous ne sommes pas affiliés aux marques citées ; leurs noms appartiennent à leurs propriétaires respectifs.</p>
+</footer>
+
+<a class="wa-float" href="https://wa.me/22897139608?text=Bonjour%2C%20je%20souhaite%20acheter%20une%20carte%20cadeau." aria-label="Écrire sur WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
+</a>
+
+</body>
+</html>

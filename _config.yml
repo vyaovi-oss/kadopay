@@ -1,0 +1,21 @@
+title: KadoPay
+description: "Cartes cadeaux streaming, jeux, musique et applis en mobile money au Sénégal, Togo, Niger, Mali et Burkina Faso."
+url: "https://kadopay.shop"
+lang: fr
+timezone: Africa/Dakar
+permalink: /:title/
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md

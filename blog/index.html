@@ -1,0 +1,64 @@
+---
+title: Blog KadoPay
+description: "Guides pour payer tes abonnements streaming, jeux, musique et applis sans carte bancaire, en mobile money."
+permalink: /blog/
+---
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#14211B; --green:#1F6B44; --gold:#E8B63A; --bg:#F6F4EE; --muted:#3D4A43; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:Inter, system-ui, sans-serif; }
+  .display { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; letter-spacing:-1px; }
+  .wrap { max-width:1120px; margin:0 auto; padding:0 16px; }
+  header { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; padding:20px 16px; max-width:1120px; margin:0 auto; }
+  .logo { font-size:26px; color:var(--ink); text-decoration:none; }
+  .logo span { color:var(--green); }
+  .btn { display:inline-flex; align-items:center; min-height:44px; padding:0 20px; border-radius:999px; text-decoration:none; font-weight:600; background:var(--ink); color:#fff; }
+  h1 { font-size:clamp(36px, 6vw, 56px); margin:32px 0 12px; }
+  .sub { font-size:18px; color:var(--muted); margin:0 0 40px; line-height:1.6; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:20px; padding-bottom:64px; }
+  .post { display:flex; flex-direction:column; gap:10px; padding:24px; border-radius:18px; background:#fff; border:1px solid #DDE3DF; text-decoration:none; color:var(--ink); }
+  .post:hover { border-color:var(--green); }
+  .post img { width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:12px; }
+  .post small { color:#5A6660; }
+  .post b { font-size:22px; line-height:1.25; }
+  .post span { color:var(--muted); line-height:1.5; }
+  .empty { padding:32px; border-radius:18px; background:#fff; color:var(--muted); }
+  footer { padding:32px 16px 48px; font-size:13px; color:#5A6660; max-width:1120px; margin:0 auto; }
+</style>
+</head>
+<body>
+<header>
+  <a class="logo display" href="/">Kado<span>Pay</span></a>
+  <a class="btn" href="https://wa.me/22897139608?text=Bonjour%2C%20je%20souhaite%20acheter%20une%20carte%20cadeau.">Nous écrire</a>
+</header>
+
+<main class="wrap">
+  <h1 class="display">Le blog KadoPay</h1>
+  <p class="sub">Nos guides pour payer tes abonnements et tes applis sans carte bancaire.</p>
+  {% if site.posts.size > 0 %}
+  <div class="grid">
+    {% for post in site.posts %}
+    <a class="post" href="{{ post.url }}">
+      {% if post.image %}<img src="{{ post.image }}" alt="">{% endif %}
+      <small>{{ post.date | date: "%d/%m/%Y" }}</small>
+      <b class="display">{{ post.title }}</b>
+      <span>{{ post.description }}</span>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="empty">Les premiers articles arrivent bientôt.</p>
+  {% endif %}
+</main>
+
+<footer>© KadoPay · Revendeur indépendant de cartes cadeaux</footer>
+</body>
+</html>
